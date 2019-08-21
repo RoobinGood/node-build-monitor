@@ -42,7 +42,8 @@ module.exports = function () {
                     callback(err);
                     return;
                 }
-                if(pipelines && pipelines.slice) {
+
+                if(pipelines && pipelines.slice && pipelines.filter) {
                     pipelines = pipelines.filter(function(pipeline) {
                         return (self.config.pipeline.status.includes(pipeline.status));
                     });
